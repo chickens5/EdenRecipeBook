@@ -3,10 +3,42 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="LdS-cE-nE0">
+            <objects>
+                <viewController storyboardIdentifier="LoadingScreen" id="LdV-cT-iLr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LdW-cT-iLr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdL-cT-iLr">
+                                <rect key="frame" x="122.33333333333333" y="429.66666666666669" width="148.66666666666669" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.25" green="0.38" blue="0.22" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="728-Z2-EI4">
+                                <rect key="frame" x="178" y="408" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LdA-cT-iLr"/>
+                        <color key="backgroundColor" red="0.95999999999999996" green="0.93000000000000005" blue="0.85999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LdL-cT-iLr" firstAttribute="centerX" secondItem="LdA-cT-iLr" secondAttribute="centerX" id="LdX-cT-iL1"/>
+                            <constraint firstItem="LdL-cT-iLr" firstAttribute="centerY" secondItem="LdA-cT-iLr" secondAttribute="centerY" id="LdY-cT-iL2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LdR-cT-iL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2620.6106870229005" y="-156.33802816901408"/>
+        </scene>
         <!--All Recipes-->
         <scene sceneID="F29-Mn-eRS">
             <objects>
@@ -26,7 +58,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All recipes" id="wsL-mw-Y1x"/>
+                    <navigationItem key="navigationItem" title="Eden Recipe Book" id="wsL-mw-Y1x"/>
                     <connections>
                         <outlet property="table" destination="uJ8-5E-z4Z" id="DcP-lo-lGl"/>
                     </connections>

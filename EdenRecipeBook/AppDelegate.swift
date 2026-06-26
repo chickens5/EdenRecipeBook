@@ -9,11 +9,13 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    // Override point for customization after application launch.
+        // Configure the global UINavigationBar appearance once, here at launch.
+        // Doing it via UIAppearance means every navigation bar pushed onto the stack
+        // (list page, details page, anything we add later) automatically picks up
+        // our forest-green bar + cream lettering — no per-screen setup required.
+        EdenTheme.applyNavigationBarAppearance()
         return true
     }
 

@@ -16,15 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-sz-3kj">
-                                <rect key="frame" x="0.0" y="118" width="377" height="666"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-sz-3kj">
+                                <rect key="frame" x="8" y="134" width="377" height="650"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D9P-Fb-FCB">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="333"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="img-V1-001">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="img-h1-001"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The recipe descriptions go here." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-L1-001">
+                                        <rect key="frame" x="0.0" y="192" width="377" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="D9P-Fb-FCB">
+                                        <rect key="frame" x="0.0" y="222" width="377" height="206"/>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-uh-ZaM">
-                                        <rect key="frame" x="0.0" y="333" width="377" height="333"/>
+                                        <rect key="frame" x="0.0" y="440" width="377" height="210"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="210" id="oI3-5i-oh8"/>
+                                        </constraints>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -32,15 +47,16 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LcG-sz-3kj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6fj-Ij-8eZ"/>
+                            <constraint firstItem="LcG-sz-3kj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="6fj-Ij-8eZ"/>
                             <constraint firstItem="LcG-sz-3kj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="Rvd-Zv-K4a"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LcG-sz-3kj" secondAttribute="bottom" id="Z4q-7q-F4R"/>
-                            <constraint firstItem="LcG-sz-3kj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xdA-Tc-nmP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LcG-sz-3kj" secondAttribute="trailing" constant="16" id="yUQ-uS-gO0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LcG-sz-3kj" secondAttribute="trailing" constant="8" id="yUQ-uS-gO0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="dsc-L1-001" id="dsc-O1-001"/>
                         <outlet property="ingredientsStack" destination="D9P-Fb-FCB" id="W7n-P4-g2h"/>
+                        <outlet property="recipeImageView" destination="img-V1-001" id="img-O1-001"/>
                         <outlet property="stepsTable" destination="dvI-uh-ZaM" id="xZe-ha-znZ"/>
                     </connections>
                 </viewController>
